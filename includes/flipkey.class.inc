@@ -139,7 +139,7 @@ if(is_array($prid)){
       	if (!isset($reviewxml->err)) {
 	      	if (is_object($reviewxml) && $reviewxml->children()) {
 						//cast xml as an array and return
-						$reviewarray = json_decode(json_encode((array) $reviewxml), 1);
+						$reviewjson = json_encode((array) $reviewxml, JSON_UNESCAPED_UNICODE);
 
 						return $reviewarray;
 			    }else{

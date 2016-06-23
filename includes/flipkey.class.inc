@@ -52,7 +52,7 @@ class flipkey {
         if (!isset($reviewxml->err)) {
           if (is_object($reviewxml) && $reviewxml->children()) {
             //cast xml as an array and return
-            $reviewjson = json_encode((array) $reviewxml);
+            $reviewjson = json_encode((array) $reviewxml, JSON_UNESCAPED_UNICODE);
             return $reviewjson;
           }
           else {
